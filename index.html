@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="grid">
+        <div id="header">
+            <button id="menu" class="menu-option">
+                <img src="icons/menu-selected.png" alt="Expand Menu">
+            </button>
+            <h2>RGBA Processor</h2>
+        </div>
+        <div id="sidebar">
+            <button id="gallery" class="menu-option sidebar-button">
+                <img src="icons/gallery-selected.png" alt="Gallery">
+                <h3>Gallery</h3>
+            </button> <!--Image or Video-->
+            <button id="import" class="menu-option sidebar-button">
+                <img src="icons/import-selected.png" alt="Import">
+                <h3>Import</h3>
+            </button> <!--Image, Video, or Gallery-->
+            <button id="export" class="menu-option sidebar-button">
+                <img src="icons/export-selected.png" alt="Export">
+                <h3>Export</h3>
+            </button> <!--Image, Video, or Gallery-->
+            <button id="settings" class="menu-option sidebar-button">
+                <img src="icons/settings-selected.png" alt="Settings">
+                <h3>Settings</h3>
+            </button> <!--Edit options such as ASCII char size, viewing window size, blur box size, etc...-->
+            <button id="help" class="menu-option sidebar-button">
+                <img src="icons/help-selected.png" alt="Help">
+                <h3>Help</h3>
+            </button> <!--Instructions-->
+        </div>
+        <div id="content">
+            <div id="left">
+                <canvas id="canvas" width="1500px" height="840px"></canvas>
+                <div id="options">
+                    <div id="file-box">
+                        <h4>Upload Image:</h4>
+                        <input type="file" id="fileInput" name="fileInput">
+                    </div>
+                    <div id="filt-box" class="hidden">
+                        <h4>Filters</h4>
+                        <select name="filt-select" id="filter">
+                            <option value="none" selected>None</option>
+                            <option value="grayscale">Grayscale</option>
+                            <option value="hrefl">Reflect (Horizontal)</option>
+                            <option value="vrefl">Reflect (Vertical)</option>
+                            <option value="blur">Box Blur</option>
+                            <option value="ascii">ASCII Art</option>
+                            <option value="edge">Sobrel Edge Detection</option>
+                        </select>
+                    </div>
+                    <button id="gal-button" class="hidden">Add To Gallery</button>
+                </div>
+            </div>
+            <div id="right">
+                <h4 id="recent">Recently Added</h4>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <form id="ascii-form" class="form">
+        <label for="charSize">Char Size:</label>
+        <input type="text" id="char-size" name="char-size" required>
+        <label for="fontSize">Font Size:</label>
+        <input type="text" id="font-size" name="font-size" required>
+        <button id="ascii-submit" type="button">Submit</button>
+        <br><br>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
